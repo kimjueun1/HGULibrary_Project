@@ -10,7 +10,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Hugo 0.88.1">
-<title>Album example · Bootstrap v5.1</title>
+<title>BookList</title>
 
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/5.1/examples/album/">
@@ -59,6 +59,10 @@
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
 	}
+}
+.book-info{
+	font-size:0.75rem;
+	margin-bottom: 0.5rem;
 }
 </style>
 
@@ -109,7 +113,7 @@
 
 		<section class="py-5 text-center container">
 			<div class="row py-lg-5">
-				<div class="col-lg-6 col-md-8 mx-auto">
+				<div class="col-lg-6 col-md-8 mx-auto mb-5">
 					<h1 class="fw-light">통합 검색</h1>
 					<form class="card">
 						<div class="input-group">
@@ -118,6 +122,9 @@
 						</div>
 					</form>
 				</div>
+			</div>
+			<div class="btn-group float-end mb-5">
+				<button type="button" class="btn btn-primary">도서추가</button>
 			</div>
 		</section>
 
@@ -134,17 +141,19 @@
 								<title>Placeholder</title><rect width="100%" height="100%"
 									fill="#55595c" />
 								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">Answers to the 4 big questions!</p>
+								<p class="book-info">저자</p>
+								<p class="book-info">출판사</p>
+								<p class="book-info">출판년도</p>
+								<p class="book-info">위치정보</p>
+								<p class="book-info">ISBN</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
 									</div>
-									<small class="text-muted">9 mins</small>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
 								</div>
 							</div>
 						</div>
@@ -160,20 +169,23 @@
 								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">도서명</p>
+								<p class="book-info">저자</p>
+								<p class="book-info">출판사</p>
+								<p class="book-info">출판년도</p>
+								<p class="book-info">위치정보</p>
+								<p class="book-info">ISBN</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
 									</div>
-									<small class="text-muted">9 mins</small>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col">
+										<div class="col">
 						<div class="card shadow-sm">
 							<svg class="bd-placeholder-img card-img-top" width="100%"
 								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
@@ -184,21 +196,23 @@
 								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">도서명</p>
+								<p class="book-info">저자</p>
+								<p class="book-info">출판사</p>
+								<p class="book-info">출판년도</p>
+								<p class="book-info">위치정보</p>
+								<p class="book-info">ISBN</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
 									</div>
-									<small class="text-muted">9 mins</small>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-
-					<div class="col">
+										<div class="col">
 						<div class="card shadow-sm">
 							<svg class="bd-placeholder-img card-img-top" width="100%"
 								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
@@ -209,20 +223,23 @@
 								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">도서명</p>
+								<p class="book-info">저자</p>
+								<p class="book-info">출판사</p>
+								<p class="book-info">출판년도</p>
+								<p class="book-info">위치정보</p>
+								<p class="book-info">ISBN</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
 									</div>
-									<small class="text-muted">9 mins</small>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col">
+										<div class="col">
 						<div class="card shadow-sm">
 							<svg class="bd-placeholder-img card-img-top" width="100%"
 								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
@@ -233,20 +250,23 @@
 								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">도서명</p>
+								<p class="book-info">저자</p>
+								<p class="book-info">출판사</p>
+								<p class="book-info">출판년도</p>
+								<p class="book-info">위치정보</p>
+								<p class="book-info">ISBN</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
 									</div>
-									<small class="text-muted">9 mins</small>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col">
+										<div class="col">
 						<div class="card shadow-sm">
 							<svg class="bd-placeholder-img card-img-top" width="100%"
 								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
@@ -257,21 +277,23 @@
 								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">도서명</p>
+								<p class="book-info">저자</p>
+								<p class="book-info">출판사</p>
+								<p class="book-info">출판년도</p>
+								<p class="book-info">위치정보</p>
+								<p class="book-info">ISBN</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
 									</div>
-									<small class="text-muted">9 mins</small>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-
-					<div class="col">
+										<div class="col">
 						<div class="card shadow-sm">
 							<svg class="bd-placeholder-img card-img-top" width="100%"
 								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
@@ -282,20 +304,23 @@
 								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">도서명</p>
+								<p class="book-info">저자</p>
+								<p class="book-info">출판사</p>
+								<p class="book-info">출판년도</p>
+								<p class="book-info">위치정보</p>
+								<p class="book-info">ISBN</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
 									</div>
-									<small class="text-muted">9 mins</small>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col">
+										<div class="col">
 						<div class="card shadow-sm">
 							<svg class="bd-placeholder-img card-img-top" width="100%"
 								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
@@ -306,20 +331,23 @@
 								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">도서명</p>
+								<p class="book-info">저자</p>
+								<p class="book-info">출판사</p>
+								<p class="book-info">출판년도</p>
+								<p class="book-info">위치정보</p>
+								<p class="book-info">ISBN</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
 									</div>
-									<small class="text-muted">9 mins</small>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col">
+										<div class="col">
 						<div class="card shadow-sm">
 							<svg class="bd-placeholder-img card-img-top" width="100%"
 								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
@@ -330,15 +358,45 @@
 								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">도서명</p>
+								<p class="book-info">저자</p>
+								<p class="book-info">출판사</p>
+								<p class="book-info">출판년도</p>
+								<p class="book-info">위치정보</p>
+								<p class="book-info">ISBN</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
 									</div>
-									<small class="text-muted">9 mins</small>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
+								</div>
+							</div>
+						</div>
+					</div>
+										<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c" />
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+							<div class="card-body">
+								<p class="card-text">도서명</p>
+								<p class="book-info">저자</p>
+								<p class="book-info">출판사</p>
+								<p class="book-info">출판년도</p>
+								<p class="book-info">위치정보</p>
+								<p class="book-info">ISBN</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
+									</div>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
 								</div>
 							</div>
 						</div>
