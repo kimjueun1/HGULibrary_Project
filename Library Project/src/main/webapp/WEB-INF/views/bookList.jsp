@@ -10,7 +10,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Hugo 0.88.1">
-<title>BookList</title>
+<title>창조과학연구소 - 소장자료</title>
 
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/5.1/examples/album/">
@@ -63,6 +63,9 @@
 .book-info{
 	font-size:0.75rem;
 	margin-bottom: 0.5rem;
+}
+.bookImg{
+	height=50%;
 }
 </style>
 
@@ -134,20 +137,13 @@
 				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 					<div class="col">
 						<div class="card shadow-sm">
-							<svg class="bd-placeholder-img card-img-top" width="100%"
-								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-								aria-label="Placeholder: Thumbnail"
-								preserveAspectRatio="xMidYMid slice" focusable="false">
-								<title>Placeholder</title><rect width="100%" height="100%"
-									fill="#55595c" />
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+							<img src="resources/img/A001.jpg" alt="bookImg" class="bookImg">
 							<div class="card-body">
 								<p class="card-text">Answers to the 4 big questions!</p>
-								<p class="book-info">저자</p>
-								<p class="book-info">출판사</p>
-								<p class="book-info">출판년도</p>
-								<p class="book-info">위치정보</p>
-								<p class="book-info">ISBN</p>
+								<p class="book-info">Don Batten, Kenneth Ham, Jonathan Sarfati, Carl Wielnad, Paul S. Taylor</p>
+								<p class="book-info">Answers In Genesis(2000), 64pages</p>
+								<p class="book-info">A-1</p>
+								<a href="https://isbnsearch.org/isbn/0-949906-25-5" class="book-info text-muted"><p>0-949906-25-5</p></a>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
 										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
@@ -160,21 +156,14 @@
 					</div>
 					<div class="col">
 						<div class="card shadow-sm">
-							<svg class="bd-placeholder-img card-img-top" width="100%"
-								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-								aria-label="Placeholder: Thumbnail"
-								preserveAspectRatio="xMidYMid slice" focusable="false">
-								<title>Placeholder</title><rect width="100%" height="100%"
-									fill="#55595c" />
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+							<img src="resources/img/A002_c.2.jpg" alt="bookImg" class="bookImg">
+							
 							<div class="card-body">
-								<p class="card-text">도서명</p>
-								<p class="book-info">저자</p>
-								<p class="book-info">출판사</p>
-								<p class="book-info">출판년도</p>
-								<p class="book-info">위치정보</p>
-								<p class="book-info">ISBN</p>
+								<p class="card-text">An Ice Age Caused by the Genesis Flood</p>
+								<p class="book-info">Michael J. Oard, Micheal Oard, Marshall Hall</p>
+								<p class="book-info">Inst For Creation Research(1990), 243pages</p>
+								<p class="book-info">A-1</p>
+								<a href="https://isbnsearch.org/isbn/0-932766-20-X" class="book-info text-muted"><p>0-932766-20-X</p></a>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
 										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
@@ -187,21 +176,13 @@
 					</div>
 										<div class="col">
 						<div class="card shadow-sm">
-							<svg class="bd-placeholder-img card-img-top" width="100%"
-								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-								aria-label="Placeholder: Thumbnail"
-								preserveAspectRatio="xMidYMid slice" focusable="false">
-								<title>Placeholder</title><rect width="100%" height="100%"
-									fill="#55595c" />
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+							<img src="resources/img/A003.jpg" alt="bookImg" class="bookImg">
+							
 							<div class="card-body">
-								<p class="card-text">도서명</p>
-								<p class="book-info">저자</p>
-								<p class="book-info">출판사</p>
-								<p class="book-info">출판년도</p>
-								<p class="book-info">위치정보</p>
-								<p class="book-info">ISBN</p>
+								<p class="card-text">Answers</p>
+								<p class="book-info">AnswersMagazine(2011), 185pages</p>
+								<p class="book-info">A-1</p>
+								<a href="https://isbnsearch.org/isbn/0-949906-25-5" class="book-info text-muted"><p></p></a>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
 										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
@@ -421,7 +402,19 @@
 	<script src="/docs/5.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
+	<script>
+	function doIsbnUrl(n) { // 콤마제거 
+		if ( typeof n == "undefined" || n == null || n == "" ) { 
+			return ""; 
+			} 
+	var isbn = '' + n; 
+	isbn = isbnUrl.replace(/(-)/g, "");
+	
+	
+	return isbn; 
+	}
 
+	</script>
 
 </body>
 </html>
