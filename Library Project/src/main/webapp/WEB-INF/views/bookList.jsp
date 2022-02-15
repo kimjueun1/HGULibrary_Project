@@ -181,7 +181,7 @@
 							<div class="card-body">
 								<p class="card-text">Answers</p>
 								<p class="book-info">AnswersMagazine(2011), 185pages</p>
-								<p class="book-info">A-1 </p>
+								<p class="book-info">A-1</p>
 								<a href="https://isbnsearch.org/isbn/0-949906-25-5" class="book-info text-muted"><p></p></a>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
