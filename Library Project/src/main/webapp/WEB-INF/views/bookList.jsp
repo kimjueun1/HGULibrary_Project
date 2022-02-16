@@ -60,12 +60,24 @@
 		font-size: 3.5rem;
 	}
 }
-.book-info{
-	font-size:0.75rem;
+
+.book-info {
+	font-size: 0.75rem;
 	margin-bottom: 0.5rem;
 }
-.bookImg{
-	height=50%;
+
+.bookImg {
+	width: 60%;
+}
+
+.edit_icon {
+	width: 19px;
+	height: 19px;
+}
+
+.delete_icon {
+	width: 12px;
+	height: 12.8px;
 }
 </style>
 
@@ -96,7 +108,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="navbar navbar-dark bg-dark shadow-sm">
+		<div class="navbar navbar-light" style="background-color: #e3f2fd;">
 			<div class="container">
 				<a href="#" class="navbar-brand d-flex align-items-center"> <img
 					src="resources/img/hgu logo.png" style="width: 35px;"> <strong>창조과학연구소
@@ -117,14 +129,21 @@
 		<section class="py-5 text-center container">
 			<div class="row py-lg-5">
 				<div class="col-lg-6 col-md-8 mx-auto mb-5">
-					<h1 class="fw-light">통합 검색</h1>
-					<form class="card">
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="도서명, 저자, 출판사">
-							<button type="submit" class="btn btn-secondary">검색</button>
+					<h2 class="fw-light mb-5">통합 검색</h2>
+					<di class="searchSelect mb-5">
+						<dt>자료 유형</dt>
+						<div class="mb-3">
+							<input id="lmt0tot" type="checkbox"> <label for="lmt0tot">전체</label>
+							<input id="lmt0tot" type="checkbox"> <label for="lmt0tot">해외</label>
+							<input id="lmt0tot" type="checkbox"> <label for="lmt0tot">국내</label>
 						</div>
-					</form>
+					</di>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="도서명, 저자, 출판사">
+						<button type="submit" class="btn btn-secondary">검색</button>
+					</div>
 				</div>
+
 			</div>
 			<div class="btn-group float-end mb-5">
 				<button type="button" class="btn btn-primary">도서추가</button>
@@ -137,247 +156,225 @@
 				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 					<div class="col">
 						<div class="card shadow-sm">
-							<img src="resources/img/A001.jpg" alt="bookImg" class="bookImg">
+							<img src="resources/img/A001.jpg" alt="bookImg"
+								class="bookImg mx-auto d-block m-1">
 							<div class="card-body">
 								<p class="card-text">Answers to the 4 big questions!</p>
-								<p class="book-info">Don Batten, Kenneth Ham, Jonathan Sarfati, Carl Wielnad, Paul S. Taylor</p>
+								<p class="book-info">Don Batten, Kenneth Ham, Jonathan
+									Sarfati, Carl Wielnad, Paul S. Taylor</p>
 								<p class="book-info">Answers In Genesis(2000), 64pages</p>
 								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/0-949906-25-5" class="book-info text-muted"><p>0-949906-25-5</p></a>
+								<a href="https://isbnsearch.org/isbn/0-949906-25-5"
+									class="book-info text-muted"><p>0-949906-25-5</p></a>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
+										<a href="#"><img src="resources/img/editIcon.png"
+											alt="editImg" class="edit_icon m-0"></a> <a href="#"
+											href="javascript:delete_ok()"><img
+											src="resources/img/delete.png" alt="deleteImg"
+											class="delete_icon m-2"></a>
 									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서
+											넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col">
 						<div class="card shadow-sm">
-							<img src="resources/img/A002_c.2.jpg" alt="bookImg" class="bookImg">
-							
+							<img src="resources/img/A002_c.2.jpg" alt="bookImg"
+								class="bookImg mx-auto d-block m-1">
 							<div class="card-body">
 								<p class="card-text">An Ice Age Caused by the Genesis Flood</p>
-								<p class="book-info">Michael J. Oard, Micheal Oard, Marshall Hall</p>
-								<p class="book-info">Inst For Creation Research(1990), 243pages</p>
+								<p class="book-info">Michael J. Oard, Micheal Oard, Marshall
+									Hall</p>
+								<p class="book-info">Inst For Creation Research(1990),
+									243pages</p>
 								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/0-932766-20-X" class="book-info text-muted"><p>0-932766-20-X</p></a>
+								<a href="https://isbnsearch.org/isbn/0-932766-20-X"
+									class="book-info text-muted"><p>0-932766-20-X</p></a>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
+										<a href="#"><img src="resources/img/editIcon.png"
+											alt="editImg" class="edit_icon m-0"></a> <a href="#"
+											href="javascript:delete_ok()"><img
+											src="resources/img/delete.png" alt="deleteImg"
+											class="delete_icon m-2"></a>
 									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서
+											넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-										<div class="col">
+					<div class="col">
 						<div class="card shadow-sm">
-							<img src="resources/img/A003.jpg" alt="bookImg" class="bookImg">
-							
+							<img src="resources/img/A003.jpg" alt="bookImg"
+								class="bookImg mx-auto d-block m-1">
+
 							<div class="card-body">
 								<p class="card-text">Answers</p>
 								<p class="book-info">AnswersMagazine(2011), 185pages</p>
 								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/0-949906-25-5" class="book-info text-muted"><p></p></a>
+								<a href="https://isbnsearch.org/isbn/0-949906-25-5"
+									class="book-info text-muted"><p></p></a>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
+										<a href="#"><img src="resources/img/editIcon.png"
+											alt="editImg" class="edit_icon m-0"></a> <a href="#"
+											href="javascript:delete_ok()"><img
+											src="resources/img/delete.png" alt="deleteImg"
+											class="delete_icon m-2"></a>
 									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서
+											넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-										<div class="col">
+					<div class="col">
 						<div class="card shadow-sm">
-							<svg class="bd-placeholder-img card-img-top" width="100%"
-								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-								aria-label="Placeholder: Thumbnail"
-								preserveAspectRatio="xMidYMid slice" focusable="false">
-								<title>Placeholder</title><rect width="100%" height="100%"
-									fill="#55595c" />
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+							<img src="resources/img/A004.jpg" alt="bookImg"
+								class="bookImg mx-auto d-block m-1">
 							<div class="card-body">
-								<p class="card-text">도서명</p>
-								<p class="book-info">저자</p>
-								<p class="book-info">출판사</p>
-								<p class="book-info">출판년도</p>
-								<p class="book-info">위치정보</p>
-								<p class="book-info">ISBN</p>
+								<p class="card-text">A Guide to the National Science Museum</p>
+								<p class="book-info">National Science Museum(1990), 61pages</p>
+								<p class="book-info">A-1</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
+										<a href="#"><img src="resources/img/editIcon.png"
+											alt="editImg" class="edit_icon m-0"></a> <a href="#"
+											href="javascript:delete_ok()"><img
+											src="resources/img/delete.png" alt="deleteImg"
+											class="delete_icon m-2"></a>
 									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서
+											넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-										<div class="col">
+					<div class="col">
 						<div class="card shadow-sm">
-							<svg class="bd-placeholder-img card-img-top" width="100%"
-								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-								aria-label="Placeholder: Thumbnail"
-								preserveAspectRatio="xMidYMid slice" focusable="false">
-								<title>Placeholder</title><rect width="100%" height="100%"
-									fill="#55595c" />
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+							<img src="resources/img/A005.jpg" alt="bookImg"
+								class="bookImg mx-auto d-block m-1">
 							<div class="card-body">
-								<p class="card-text">도서명</p>
-								<p class="book-info">저자</p>
-								<p class="book-info">출판사</p>
-								<p class="book-info">출판년도</p>
-								<p class="book-info">위치정보</p>
-								<p class="book-info">ISBN</p>
+								<p class="card-text">A Picture Tour of the National Museum
+									of Natural History</p>
+								<p class="book-info">Robert D. Sullivan, Sue Voss, Chip
+									Clark</p>
+								<p class="book-info">National Science Museum(1991), 32pages</p>
+								<p class="book-info">A-1</p>
+								<a href="https://isbnsearch.org/isbn/1-56098-050-8"
+									class="book-info text-muted"><p>1-56098-050-8</p></a>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
+										<a href="#"><img src="resources/img/editIcon.png"
+											alt="editImg" class="edit_icon m-0"></a> <a href="#"
+											href="javascript:delete_ok()"><img
+											src="resources/img/delete.png" alt="deleteImg"
+											class="delete_icon m-2"></a>
 									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서
+											넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-										<div class="col">
+					<div class="col">
 						<div class="card shadow-sm">
-							<svg class="bd-placeholder-img card-img-top" width="100%"
-								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-								aria-label="Placeholder: Thumbnail"
-								preserveAspectRatio="xMidYMid slice" focusable="false">
-								<title>Placeholder</title><rect width="100%" height="100%"
-									fill="#55595c" />
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+							<img src="resources/img/A006.jpg" alt="bookImg"
+								class="bookImg mx-auto d-block m-1">
 							<div class="card-body">
-								<p class="card-text">도서명</p>
-								<p class="book-info">저자</p>
-								<p class="book-info">출판사</p>
-								<p class="book-info">출판년도</p>
-								<p class="book-info">위치정보</p>
-								<p class="book-info">ISBN</p>
+								<p class="card-text">Archaeology and Bible history</p>
+								<p class="book-info">Joseph P. Free</p>
+								<p class="book-info">scripture press publications inc(1969),
+									398pages</p>
+								<p class="book-info">A-1</p>
+								<a href="https://isbnsearch.org/isbn/0-88207-801-1"
+									class="book-info text-muted"><p>0-88207-801-1</p></a>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
+										<a href="#"><img src="resources/img/editIcon.png"
+											alt="editImg" class="edit_icon m-0"></a> <a href="#"
+											href="javascript:delete_ok()"><img
+											src="resources/img/delete.png" alt="deleteImg"
+											class="delete_icon m-2"></a>
 									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서
+											넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-										<div class="col">
+					<div class="col">
 						<div class="card shadow-sm">
-							<svg class="bd-placeholder-img card-img-top" width="100%"
-								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-								aria-label="Placeholder: Thumbnail"
-								preserveAspectRatio="xMidYMid slice" focusable="false">
-								<title>Placeholder</title><rect width="100%" height="100%"
-									fill="#55595c" />
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+							<img src="resources/img/A007.jpg" alt="bookImg"
+								class="bookImg mx-auto d-block m-1">
 							<div class="card-body">
-								<p class="card-text">도서명</p>
-								<p class="book-info">저자</p>
-								<p class="book-info">출판사</p>
-								<p class="book-info">출판년도</p>
-								<p class="book-info">위치정보</p>
-								<p class="book-info">ISBN</p>
+								<p class="card-text">A basis for a new biology</p>
+								<p class="book-info">A. E. Wilder-Smith</p>
+								<p class="book-info">telos(1976), 290pages</p>
+								<p class="book-info">A-1</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
+										<a href="#"><img src="resources/img/editIcon.png"
+											alt="editImg" class="edit_icon m-0"></a> <a href="#"
+											href="javascript:delete_ok()"><img
+											src="resources/img/delete.png" alt="deleteImg"
+											class="delete_icon m-2"></a>
 									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서
+											넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-										<div class="col">
+					<div class="col">
 						<div class="card shadow-sm">
-							<svg class="bd-placeholder-img card-img-top" width="100%"
-								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-								aria-label="Placeholder: Thumbnail"
-								preserveAspectRatio="xMidYMid slice" focusable="false">
-								<title>Placeholder</title><rect width="100%" height="100%"
-									fill="#55595c" />
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+							<img src="resources/img/A008.jpg" alt="bookImg"
+								class="bookImg mx-auto d-block m-1">
 							<div class="card-body">
-								<p class="card-text">도서명</p>
-								<p class="book-info">저자</p>
-								<p class="book-info">출판사</p>
-								<p class="book-info">출판년도</p>
-								<p class="book-info">위치정보</p>
-								<p class="book-info">ISBN</p>
+								<p class="card-text">After Man</p>
+								<p class="book-info">Dougal Dixon</p>
+								<p class="book-info">St. Martin's Press(1981), 124pages</p>
+								<p class="book-info">A-1</p>
+								<a href="https://isbnsearch.org/isbn/0-312-01163-6"
+									class="book-info text-muted"><p>0-312-01163-6</p></a>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
+										<a href="#"><img src="resources/img/editIcon.png"
+											alt="editImg" class="edit_icon m-0"></a> <a href="#"
+											href="javascript:delete_ok()"><img
+											src="resources/img/delete.png" alt="deleteImg"
+											class="delete_icon m-2"></a>
 									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서
+											넣기</small></a>
 								</div>
 							</div>
 						</div>
 					</div>
-										<div class="col">
+					<div class="col">
 						<div class="card shadow-sm">
-							<svg class="bd-placeholder-img card-img-top" width="100%"
-								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-								aria-label="Placeholder: Thumbnail"
-								preserveAspectRatio="xMidYMid slice" focusable="false">
-								<title>Placeholder</title><rect width="100%" height="100%"
-									fill="#55595c" />
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+							<img src="resources/img/A008(1).jpg" alt="bookImg"
+								class="bookImg mx-auto d-block m-1">
 							<div class="card-body">
-								<p class="card-text">도서명</p>
-								<p class="book-info">저자</p>
-								<p class="book-info">출판사</p>
-								<p class="book-info">출판년도</p>
-								<p class="book-info">위치정보</p>
-								<p class="book-info">ISBN</p>
+								<p class="card-text">And God Created Volume 4</p>
+								<p class="book-info">Kelly L. Segraves</p>
+								<p class="book-info">Creation-Science Research Center(1973),
+									91pages</p>
+								<p class="book-info">A-1</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
+										<a href="#"><img src="resources/img/editIcon.png"
+											alt="editImg" class="edit_icon m-0"></a> <a href="#"
+											href="javascript:delete_ok()"><img
+											src="resources/img/delete.png" alt="deleteImg"
+											class="delete_icon m-2"></a>
 									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-										<div class="col">
-						<div class="card shadow-sm">
-							<svg class="bd-placeholder-img card-img-top" width="100%"
-								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-								aria-label="Placeholder: Thumbnail"
-								preserveAspectRatio="xMidYMid slice" focusable="false">
-								<title>Placeholder</title><rect width="100%" height="100%"
-									fill="#55595c" />
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-							<div class="card-body">
-								<p class="card-text">도서명</p>
-								<p class="book-info">저자</p>
-								<p class="book-info">출판사</p>
-								<p class="book-info">출판년도</p>
-								<p class="book-info">위치정보</p>
-								<p class="book-info">ISBN</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">수정</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">삭제</button>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서 넣기</small></a>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서
+											넣기</small></a>
 								</div>
 							</div>
 						</div>
@@ -394,7 +391,9 @@
 				<a href="#">Back to top</a>
 			</p>
 			<p class="mb-1">한동대학교 창조과학연구소</p>
-			<p class="mb-0"><a>walab</a></p>
+			<p class="mb-0">
+				<a>walab</a>
+			</p>
 		</div>
 	</footer>
 
@@ -403,17 +402,11 @@
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
 	<script>
-	function doIsbnUrl(n) { // 콤마제거 
-		if ( typeof n == "undefined" || n == null || n == "" ) { 
-			return ""; 
-			} 
-	var isbn = '' + n; 
-	isbn = isbnUrl.replace(/(-)/g, "");
-	
-	
-	return isbn; 
+	function delete_ok() {
+		var a = confirm("정말로 삭제하겠습니까?");
+		<!-- if (a)-->
+		<!--	location.href = '/webcamp/teamA/delete_ok/' + id; -->
 	}
-
 	</script>
 
 </body>
