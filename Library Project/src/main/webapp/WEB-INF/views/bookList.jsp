@@ -86,33 +86,12 @@
 <body>
 
 	<header>
-		<div class="collapse bg-dark" id="navbarHeader">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-8 col-md-7 py-4">
-						<h4 class="text-white">About</h4>
-						<p class="text-muted">Add some information about the album
-							below, the author, or any other background context. Make it a few
-							sentences long so folks can pick up some informative tidbits.
-							Then, link them off to some social networking sites or contact
-							information.</p>
-					</div>
-					<div class="col-sm-4 offset-md-1 py-4">
-						<h4 class="text-white">Contact</h4>
-						<ul class="list-unstyled">
-							<li><a href="#" class="text-white">Follow on Twitter</a></li>
-							<li><a href="#" class="text-white">Like on Facebook</a></li>
-							<li><a href="#" class="text-white">Email me</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+
 		<div class="navbar navbar-light" style="background-color: #e3f2fd;">
 			<div class="container">
-				<a href="#" class="navbar-brand d-flex align-items-center"> <img
-					src="resources/img/hgu logo.png" style="width: 35px;"> <strong>창조과학연구소
-						도서관</strong>
+				<a href="redirect" class="navbar-brand d-flex align-items-center">
+					<img src="resources/img/hgu logo.png" class="m-1"
+					style="width: 35px;"> <strong>창조과학연구소 도서관</strong>
 				</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarHeader"
@@ -122,6 +101,36 @@
 				</button>
 			</div>
 		</div>
+		<div class="collapse bg-light" id="navbarHeader">
+			<div class="container">
+				<div class="row">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light">
+						<div class="container-fluid">
+							<a class="navbar-brand" href="#"></a>
+							<button class="navbar-toggler" type="button"
+								data-bs-toggle="collapse" data-bs-target="#navbarNav"
+								aria-controls="navbarNav" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav">
+									<li class="nav-item"><a class="nav-link" href="./main">Home</a></li>
+									<li class="nav-item"><a class="nav-link active"
+										aria-current="page" href="">도서목록</a></li>
+									<li class="nav-item"><a class="nav-link" href="./about">About</a>
+									</li>
+									<li class="nav-item"><a class="nav-link disabled" href="#"
+										tabindex="-1" aria-disabled="true">내 관심도서</a></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+
 	</header>
 
 	<main>
@@ -131,12 +140,12 @@
 				<div class="col-lg-6 col-md-8 mx-auto mb-5">
 					<h2 class="fw-light mb-5">통합 검색</h2>
 					<di class="searchSelect mb-5">
-						<dt>자료 유형</dt>
-						<div class="mb-3">
-							<input id="lmt0tot" type="checkbox"> <label for="lmt0tot">전체</label>
-							<input id="lmt0tot" type="checkbox"> <label for="lmt0tot">해외</label>
-							<input id="lmt0tot" type="checkbox"> <label for="lmt0tot">국내</label>
-						</div>
+					<dt>자료 유형</dt>
+					<div class="mb-3">
+						<input id="lmt0tot" type="checkbox"> <label for="lmt0tot">전체</label>
+						<input id="lmt0tot" type="checkbox"> <label for="lmt0tot">해외</label>
+						<input id="lmt0tot" type="checkbox"> <label for="lmt0tot">국내</label>
+					</div>
 					</di>
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="도서명, 저자, 출판사">
