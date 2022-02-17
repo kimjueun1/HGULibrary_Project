@@ -9,9 +9,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class LibraryController {
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String main(Locale locale, Model model) {
+		System.out.println("bookList page loaded");
+		return "mainPage";
+	}
 	@RequestMapping(value = "/bookList", method = RequestMethod.GET)
 	public String bookList(Locale locale, Model model) {
 		System.out.println("bookList page loaded");
 		return "bookList";
+	}
+	@RequestMapping(value = "/about", method = RequestMethod.GET)
+	public String about(Locale locale, Model model) {
+		System.out.println("bookList page loaded");
+		return "about";
 	}
 }
