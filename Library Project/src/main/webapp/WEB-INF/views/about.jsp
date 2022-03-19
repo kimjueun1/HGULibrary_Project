@@ -83,6 +83,18 @@
 	width: 12px;
 	height: 12.8px;
 }
+
+.wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 50px;
+}
+
+.ct {
+	margin-bottom: 50px;
+}
 </style>
 
 
@@ -135,57 +147,58 @@
 		</div>
 	</header>
 	<main>
-		<canvas id="myChart" class="" style="width: 100%; max-width: 700px"></canvas>
-		<canvas id="myChart2" style="width: 100%; max-width: 700px"></canvas>
-		<script>
-			var xValues = [ "국내도서", "국외도서", "해외도서" ];
-			var yValues = [ 137, 467, 12 ];
-			var barColors = [ "green", "brown", "orange" ];
+		<div class="wrap">
+			<canvas id="myChart2" class="ct" style="width: 100%; max-width: 700px"></canvas>
+			<canvas id="myChart" class="ct" style="width: 100%; max-width: 700px"></canvas>
+			<script>
+				var xValues = [ "국내도서", "국외도서", "해외도서" ];
+				var yValues = [ 137, 467, 12 ];
+				var barColors = [ "#00aba9", "#2b5797", "#e8c3b9", "#1e7145" ];
 
-			new Chart("myChart", {
-				type : "bar",
-				data : {
-					labels : xValues,
-					datasets : [ {
-						backgroundColor : barColors,
-						data : yValues
-					} ]
-				},
-				options : {
-					legend : {
-						display : false
+				new Chart("myChart2", {
+					type : "doughnut",
+					data : {
+						labels : xValues,
+						datasets : [ {
+							backgroundColor : barColors,
+							data : yValues
+						} ]
 					},
-					title : {
-						display : true,
-						text : "보유 도서 수(2022)"
+					options : {
+						title : {
+							display : true,
+							text : "보유 도서 수(2022)"
+						}
 					}
-				}
-			});
-		</script>
-		<script>
-			var xValues = [ "국내도서", "국외도서", "해외도서" ];
-			var yValues = [ 137, 467, 12 ];
-			var barColors = [ "#00aba9", "#2b5797", "#e8c3b9",
-					"#1e7145" ];
+				});
+			</script>
+			<script>
+				var xValues = [ "국내도서", "국외도서", "해외도서" ];
+				var yValues = [ 137, 467, 12 ];
+				var barColors = [ "green", "brown", "orange" ];
 
-			new Chart("myChart2", {
-				type : "doughnut",
-				data : {
-					labels : xValues,
-					datasets : [ {
-						backgroundColor : barColors,
-						data : yValues
-					} ]
-				},
-				options : {
-					title : {
-						display : true,
-						text : "보유 도서 수(2022)"
+				new Chart("myChart", {
+					type : "bar",
+					data : {
+						labels : xValues,
+						datasets : [ {
+							backgroundColor : barColors,
+							data : yValues
+						} ]
+					},
+					options : {
+						legend : {
+							display : false
+						},
+						title : {
+							display : true,
+							text : "보유 도서 수(2022)"
+						}
 					}
-				}
-			});
-		</script>
+				});
+			</script>
 
+		</div>
 	</main>
 
 	<footer class="text-muted py-5">
