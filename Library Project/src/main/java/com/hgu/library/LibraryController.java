@@ -14,6 +14,11 @@ public class LibraryController {
 		System.out.println("bookList page loaded");
 		return "mainPage";
 	}
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Locale locale, Model model) {
+		System.out.println("login page loaded");
+		return "login";
+	}
 	@RequestMapping(value = "/bookList", method = RequestMethod.GET)
 	public String bookList(Locale locale, Model model) {
 		System.out.println("bookList page loaded");

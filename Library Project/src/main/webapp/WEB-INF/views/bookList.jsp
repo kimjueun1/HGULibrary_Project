@@ -89,10 +89,15 @@
 
 		<div class="navbar navbar-light" style="background-color: #e3f2fd;">
 			<div class="container">
-				<a href="redirect" class="navbar-brand d-flex align-items-center">
+				<a href="./main" class="navbar-brand d-flex align-items-center">
 					<img src="resources/img/hgu logo.png" class="m-1"
 					style="width: 35px;"> <strong>창조과학연구소 도서관</strong>
 				</a>
+				<div class="me-auto">
+					<a href="./login"
+						class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0">관리자
+						로그인</a>
+				</div>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarHeader"
 					aria-controls="navbarHeader" aria-expanded="false"

@@ -105,10 +105,15 @@
 
 		<div class="navbar navbar-light" style="background-color: #e3f2fd;">
 			<div class="container">
-				<a href="redirect" class="navbar-brand d-flex align-items-center">
+				<a href="./main" class="navbar-brand d-flex align-items-center">
 					<img src="resources/img/hgu logo.png" class="m-1"
 					style="width: 35px;"> <strong>창조과학연구소 도서관</strong>
 				</a>
+				<div class="me-auto">
+					<a href="./login"
+						class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0">관리자
+						로그인</a>
+				</div>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarHeader"
 					aria-controls="navbarHeader" aria-expanded="false"
@@ -131,11 +136,10 @@
 							</button>
 							<div class="collapse navbar-collapse" id="navbarNav">
 								<ul class="navbar-nav">
-									<li class="nav-item"><a class="nav-link active"
-										aria-current="page" href="">Home</a></li>
+									<li class="nav-item"><a class="nav-link" href="./main">Home</a></li>
 									<li class="nav-item"><a class="nav-link" href="./bookList">도서목록</a></li>
-									<li class="nav-item"><a class="nav-link" href="./about">About</a>
-									</li>
+									<li class="nav-item"><a class="nav-link active"
+										aria-current="page" href="./about">About</a></li>
 									<li class="nav-item"><a class="nav-link disabled" href="#"
 										tabindex="-1" aria-disabled="true">내 관심도서</a></li>
 								</ul>
@@ -148,7 +152,8 @@
 	</header>
 	<main>
 		<div class="wrap">
-			<canvas id="myChart2" class="ct" style="width: 100%; max-width: 700px"></canvas>
+			<canvas id="myChart2" class="ct"
+				style="width: 100%; max-width: 700px"></canvas>
 			<canvas id="myChart" class="ct" style="width: 100%; max-width: 700px"></canvas>
 			<script>
 				var xValues = [ "국내도서", "국외도서", "해외도서" ];
@@ -201,7 +206,7 @@
 		</div>
 	</main>
 
-	<footer class="text-muted py-5">
+	<footer class="text-muted py-5 bg-light">
 		<div class="container">
 			<p class="float-end mb-1">
 				<a href="#">Back to top</a>

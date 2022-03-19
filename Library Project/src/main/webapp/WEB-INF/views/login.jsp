@@ -1,17 +1,10 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-	language="java"%>
-
-<!doctype html>
-<html lang="kr">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author"
-	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-<meta name="generator" content="Hugo 0.88.1">
-<title>창조과학연구소 - 소장자료</title>
-
+<meta charset="UTF-8">
+<title>로그인 페이지</title>
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/5.1/examples/album/">
 
@@ -44,64 +37,31 @@
 	color="#7952b3">
 <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
 <meta name="theme-color" content="#7952b3">
-
-
 <style>
-.bd-placeholder-img {
-	font-size: 1.125rem;
-	text-anchor: middle;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
-}
-
-@media ( min-width : 768px) {
-	.bd-placeholder-img-lg {
-		font-size: 3.5rem;
-	}
-}
-
-.book-info {
-	font-size: 0.75rem;
-	margin-bottom: 0.5rem;
-}
-
-.bookImg {
-	width: 60%;
-}
-
-.edit_icon {
-	width: 19px;
-	height: 19px;
-}
-
-.delete_icon {
-	width: 12px;
-	height: 12.8px;
-}
-
 .main {
+	background: #d8e7fa;
+}
+.wrap {
 	height: 100%;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+	margin-top: 20%;
+	margin-bottom: 20%;
 }
 
-.wrap {
-	margin-top: 100px;
-	margin-bottom: 100px;
-	<!--background: #d8e7fa;-->
-	text-align: center;
-	border-radius: 15px;
-	
+.wrap login-btn {
+	width: 400px;
+	height: 400px;
+	position: absolute;
 }
 </style>
 
-
 </head>
 <body>
-
 	<header>
 
 		<div class="navbar navbar-light" style="background-color: #e3f2fd;">
@@ -110,7 +70,6 @@
 					<img src="resources/img/hgu logo.png" class="m-1"
 					style="width: 35px;"> <strong>창조과학연구소 도서관</strong>
 				</a>
-				<div class="me-auto"><a href="./login" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0">관리자 로그인</a></div>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarHeader"
 					aria-controls="navbarHeader" aria-expanded="false"
@@ -119,7 +78,6 @@
 				</button>
 			</div>
 		</div>
-		
 		<div class="collapse bg-light" id="navbarHeader">
 			<div class="container">
 				<div class="row">
@@ -149,38 +107,18 @@
 			</div>
 		</div>
 	</header>
-	<main class="m-5"">
-		<div class="m-5">
-			<div class="wrap bg-light">
-				<section class="py-5 text-center container">
-					<div class="row py-lg-5">
-						<div class="box p-5 col-lg-6 col-md-8 mx-auto mb-5" style="min-width: 500px; border-radius:35px;">
-							<h1 class="fw-light mb-5">통합 검색</h1>
-							<di class="searchSelect mb-5">
-							<dt>자료 유형</dt>
-							<div class="mb-5">
-								<input id="lmt0tot" type="checkbox"> <label
-									for="lmt0tot">전체</label> <input id="lmt0tot" type="checkbox">
-								<label for="lmt0tot">해외</label> <input id="lmt0tot"
-									type="checkbox"> <label for="lmt0tot">국내</label>
-							</div>
-							</di>
-							<div class="input-group input-group-lg">
-								<input type="text" class="form-control"
-									placeholder="도서명, 저자, 출판사">
-								<button type="submit" class="btn btn-secondary">검색</button>
-							</div>
-						</div>
-					</div>
-				</section>
+	<main>
+		<div class="wrap">
+			<div class="login-btn">
+				<img style="width: 200px;" src="resources/img/googleLogin.png" /><a
+					class="" href="javascript:googleLogin();"></a>
 			</div>
 		</div>
 	</main>
-
-	<footer class="text-white py-5 bg-secondary">
+	<footer class="text-muted py-5 bg-light">
 		<div class="container">
 			<p class="float-end mb-1">
-				<a class="text-white" href="#">Back to top</a>
+				<a href="#">Back to top</a>
 			</p>
 			<p class="mb-1">한동대학교 창조과학연구소</p>
 			<p class="mb-0">
@@ -188,6 +126,5 @@
 			</p>
 		</div>
 	</footer>
-
 </body>
 </html>
