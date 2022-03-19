@@ -6,7 +6,7 @@
 
 ## 참여자
 
-<img src="https://github.com/kimjueun1.png" width="200" height="400"/>
+<img src="https://github.com/kimjueun1.png" width="250"/>
 | :--------------------------------------: | 
 |            **김주은**            |
 
