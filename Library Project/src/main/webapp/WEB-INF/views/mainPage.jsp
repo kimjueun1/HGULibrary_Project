@@ -110,7 +110,8 @@
 					<img src="resources/img/hgu logo.png" class="m-1"
 					style="width: 35px;"> <strong>창조과학연구소 도서관</strong>
 				</a>
-				<div class="me-auto"><a href="./login" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0">관리자 로그인</a></div>
+				<div class="me-auto"><a href="./login" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0">관리자 모드</a></div>
+				<div class="flex-row-reverse"><a href="./login" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0 me-3">로그인</a></div>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarHeader"
 					aria-controls="navbarHeader" aria-expanded="false"

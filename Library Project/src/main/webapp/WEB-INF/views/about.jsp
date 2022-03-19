@@ -111,8 +111,7 @@
 				</a>
 				<div class="me-auto">
 					<a href="./login"
-						class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0">관리자
-						로그인</a>
+						class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0">관리자 모드</a>
 				</div>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarHeader"
