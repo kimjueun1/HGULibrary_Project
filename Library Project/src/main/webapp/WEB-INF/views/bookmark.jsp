@@ -10,7 +10,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Hugo 0.88.1">
-<title>창조과학연구소 - 소장자료</title>
+<title>창조과학연구소 - 관심도서</title>
 
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/5.1/examples/album/">
@@ -120,11 +120,10 @@
 							<div class="collapse navbar-collapse" id="navbarNav">
 								<ul class="navbar-nav">
 									<li class="nav-item"><a class="nav-link" href="./main">Home</a></li>
-									<li class="nav-item"><a class="nav-link active"
-										aria-current="page" href="">도서목록</a></li>
+									<li class="nav-item"><a class="nav-link " href="./bookList">도서목록</a></li>
 									<li class="nav-item"><a class="nav-link" href="./about">About</a>
 									</li>
-									<li class="nav-item"><a class="nav-link" href="./bookmark">내 관심도서</a></li>
+									<li class="nav-item"><a class="nav-link active" aria-current="page" href="./bookmark">내 관심도서</a></li>
 								</ul>
 							</div>
 						</div>
@@ -140,22 +139,6 @@
 
 		<section class="py-5 text-center container">
 			<div class="row py-lg-5">
-				<div class="col-lg-6 col-md-8 mx-auto mb-5">
-					<h2 class="fw-light mb-5">통합 검색</h2>
-					<di class="searchSelect mb-5">
-					<dt>자료 유형</dt>
-					<div class="mb-3">
-						<input id="lmt0tot" type="checkbox"> <label for="lmt0tot">전체</label>
-						<input id="lmt0tot" type="checkbox"> <label for="lmt0tot">해외</label>
-						<input id="lmt0tot" type="checkbox"> <label for="lmt0tot">국내</label>
-					</div>
-					</di>
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="도서명, 저자, 출판사">
-						<button type="submit" class="btn btn-secondary">검색</button>
-					</div>
-				</div>
-
 			</div>
 			<div class="btn-group float-end mb-5">
 				<button type="button" class="btn btn-primary">도서추가</button>

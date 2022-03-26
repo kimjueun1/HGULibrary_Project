@@ -10,7 +10,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Hugo 0.88.1">
-<title>창조과학연구소 - 소장자료</title>
+<title>창조과학연구소 - 메인페이지</title>
 
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/5.1/examples/album/">
@@ -140,8 +140,7 @@
 									<li class="nav-item"><a class="nav-link" href="./bookList">도서목록</a></li>
 									<li class="nav-item"><a class="nav-link" href="./about">About</a>
 									</li>
-									<li class="nav-item"><a class="nav-link disabled" href="#"
-										tabindex="-1" aria-disabled="true">내 관심도서</a></li>
+									<li class="nav-item"><a class="nav-link" href="./bookmark">내 관심도서</a></li>
 								</ul>
 							</div>
 						</div>

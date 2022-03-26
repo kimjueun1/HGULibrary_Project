@@ -24,6 +24,11 @@ public class LibraryController {
 		System.out.println("bookList page loaded");
 		return "bookList";
 	}
+	@RequestMapping(value = "/bookmark", method = RequestMethod.GET)
+	public String bookmark(Locale locale, Model model) {
+		System.out.println("bookList page loaded");
+		return "bookmark";
+	}
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
 	public String about(Locale locale, Model model) {
 		System.out.println("bookList page loaded");
