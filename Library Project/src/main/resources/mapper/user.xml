@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+
+	<insert id="insertUser">
+		insert into camp1.user(name, email, nickName, mbti,
+		registration, admin)
+		values
+		(#{name}, #{email}, #{nickName}, #{mbti},
+		#{registration}, #{admin})
+	</insert>
+
+	<select id="getUser" resultType="com.hgu.webcamp.DTO.userDTO">
+		SELECT user.id, name, email,
+		nickName, mbti, type FROM (camp1.user
+		JOIN camp1.mbti ON user.mbti = mbti.id)
+		WHERE user.id = #{userId}
+	</select>
+
+	<select id="readAllMbti"
+		resultType="com.hgu.webcamp.DTO.userDTO">
+		SELECT * FROM camp1.mbti
+	</select>
+
+	<delete id="deleteUser">
+		DELETE
+		from user
+		WHERE id = #{id};
+	</delete>
+
+	<update id="updateUser">
+		UPDATE
+
+	</update>
+	
+	<update id="updateProfile">
+		UPDATE camp1.user
+		set nickName = '#{nickName}', mbti= #{mbti}
+		where id = #{id};
+	</update> 
+
+	<select id="getMBTIlist">
+		select * from camp1.mbti
+	</select>
+
+
+	<update id="updateViews">
+		UPDATE camp1.test SET views = views + 1 WHERE id =
+		#{id};
+	</update>
+
+	<select id="readViews" resultType="int">
+		SELECT views FROM camp1.test
+		WHERE id = #{id};
+	</select>
+
+	<select id="readUserByEmail" resultType="int">
+		SELECT id FROM
+		camp1.user WHERE email = #{email}
+	</select>
+
+	<select id="readSavedTest" resultType="com.hgu.webcamp.DTO.userDTO">
+		SELECT savedTest.id, savedTest.result, savedTest.testId, test.testName, mbti.type, savedTest.regDate
+		FROM (((camp1.user
+		JOIN camp1.savedTest ON user.id = savedTest.userId)
+		JOIN camp1.mbti ON savedTest.result = mbti.id)
+		JOIN camp1.test ON savedTest.testId = test.id) WHERE user.id = #{userId}
+		ORDER BY savedTest.regDate DESC;
+	</select>
+
+
+</mapper>
