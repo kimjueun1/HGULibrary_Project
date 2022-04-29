@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="kr">
 <head>
@@ -165,8 +165,35 @@
 		<div class="album py-5 bg-light">
 			<div class="container">
 
-				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+				<div id="list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+				<c:forEach items="${list}" var="u">
 					<div class="col">
+						<div class="card shadow-sm">
+							<img src="resources/img/A001.jpg" alt="bookImg"
+								class="bookImg mx-auto d-block m-1">
+							<div class="card-body">
+								<p class="card-text" id="BookTitle">${u.getTitle()}</p>
+								<p class="book-info" id="Author">${u.getAuthor()}</p>
+								<p class="book-info" id="publication">${u.getPublisher()}, ${u.getPulication_date() }</p>
+								<p class="book-info" id="location">${u.getLocation()}</p>
+								<a href="https://isbnsearch.org/isbn/0-949906-25-5"
+									class="book-info text-muted" id="isbn"><p>${u.getIsbn()}</p></a>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<a href="#"><img src="resources/img/editIcon.png"
+											alt="editImg" class="edit_icon m-0"></a> <a href="#"
+											href="javascript:delete_ok('${u.getId() }')"><img
+											src="resources/img/delete.png" alt="deleteImg"
+											class="delete_icon m-2"></a>
+									</div>
+									<a href="#" class="text-muted"><small class="text-muted">관심도서
+											넣기</small></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+				<!-- 	<div class="col">
 						<div class="card shadow-sm">
 							<img src="resources/img/A001.jpg" alt="bookImg"
 								class="bookImg mx-auto d-block m-1">
@@ -191,206 +218,11 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A002_c.2.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">An Ice Age Caused by the Genesis Flood</p>
-								<p class="book-info">Michael J. Oard, Micheal Oard, Marshall
-									Hall</p>
-								<p class="book-info">Inst For Creation Research(1990),
-									243pages</p>
-								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/0-932766-20-X"
-									class="book-info text-muted"><p>0-932766-20-X</p></a>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A003.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
+					</div> -->
+	
 
-							<div class="card-body">
-								<p class="card-text">Answers</p>
-								<p class="book-info">AnswersMagazine(2011), 185pages</p>
-								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/0-949906-25-5"
-									class="book-info text-muted"><p></p></a>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A004.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">A Guide to the National Science Museum</p>
-								<p class="book-info">National Science Museum(1990), 61pages</p>
-								<p class="book-info">A-1</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A005.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">A Picture Tour of the National Museum
-									of Natural History</p>
-								<p class="book-info">Robert D. Sullivan, Sue Voss, Chip
-									Clark</p>
-								<p class="book-info">National Science Museum(1991), 32pages</p>
-								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/1-56098-050-8"
-									class="book-info text-muted"><p>1-56098-050-8</p></a>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A006.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">Archaeology and Bible history</p>
-								<p class="book-info">Joseph P. Free</p>
-								<p class="book-info">scripture press publications inc(1969),
-									398pages</p>
-								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/0-88207-801-1"
-									class="book-info text-muted"><p>0-88207-801-1</p></a>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A007.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">A basis for a new biology</p>
-								<p class="book-info">A. E. Wilder-Smith</p>
-								<p class="book-info">telos(1976), 290pages</p>
-								<p class="book-info">A-1</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A008.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">After Man</p>
-								<p class="book-info">Dougal Dixon</p>
-								<p class="book-info">St. Martin's Press(1981), 124pages</p>
-								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/0-312-01163-6"
-									class="book-info text-muted"><p>0-312-01163-6</p></a>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A008(1).jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">And God Created Volume 4</p>
-								<p class="book-info">Kelly L. Segraves</p>
-								<p class="book-info">Creation-Science Research Center(1973),
-									91pages</p>
-								<p class="book-info">A-1</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
+
+
 				</div>
 			</div>
 		</div>

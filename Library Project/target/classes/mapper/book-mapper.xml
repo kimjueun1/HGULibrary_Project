@@ -4,23 +4,23 @@
 
 <mapper namespace="BookDAO">
 	<insert id="insertBook">
-	insert into csr_library (bookcode, pdf_name, img_name, book_name, author, translator, publication_date, publisher, pages, isbn, location, memo, copies)
+	insert into book (bookcode, pdf_name, img_name, book_name, author, translator, publication_date, publisher, pages, isbn, location, memo, copies)
 	values 
 	(#{bookcode}, #{pdf_name}, #{img_name}, #{book_name}, #{author}, #{translator}, #{publication_date}, #{publisher}, #{pages}, #{isbn}, #{location}, #{memo}, #{copies})
 	</insert>
 	
 	<update id="updateBook">
-	update csr_library
+	update book
 		set bookcode=#{bookcode}, pdf_name=#{pdf_name}, img_name=#{img_name}, book_name=#{book_name}, author=#{author}, translator=#{translator}, publication_date=#{publication_date}, publisher=#{publisher}, pages=#{pages}, isbn=#{isbn}, location=#{location}, memo=#{memo}, copies=#{copies}
 		where id=#{id}
 	</update>
 	<delete id="deleteBook">
-	delete from csr_library where id=#{id}
+	delete from book where id=#{id}
 	</delete>
 	<select id="getBook" resultType="book">
-	select * from csr_library where id=#{id}
+	select * from book where id=#{id}
 	</select>
 	<select id="getBookList" resultType="book">
-	select * from csr_library order by id desc
+	select * from book order by id desc
 	</select>
 </mapper>

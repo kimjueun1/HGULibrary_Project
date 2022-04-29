@@ -16,19 +16,19 @@ public class BookDAOImpl implements BookDAO {
 	@Override
 	public int insertBook(BookDTO dto) {
 		System.out.println("insertBookList");
-		return sqlSession.insert("BookDAO.insertBoard", dto);
+		return sqlSession.insert("BookDAO.insertBook", dto);
 	}
 	
 	@Override
 	public int updateBook(BookDTO dto) {
 		System.out.println("updateBookList");
-		return sqlSession.update("BookDAO.updateBoard", dto);
+		return sqlSession.update("BookDAO.updateBook", dto);
 	}
 
 	@Override
 	public int deleteBook(int id) {
 		System.out.println("deleteBookList");
-		return sqlSession.delete("BookDAO.deleteBoard", id);
+		return sqlSession.delete("BookDAO.deleteBook", id);
 	}
 	
 	@Override

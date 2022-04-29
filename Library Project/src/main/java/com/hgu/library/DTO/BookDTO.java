@@ -18,6 +18,7 @@ public class BookDTO {
 	private String memo;
 	private String copies;
 	private Date regDate;
+	
 	public int getId() {
 		return id;
 	}
