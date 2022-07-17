@@ -5,11 +5,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
 <%@ page import="com.hgu.library.dao.BookDao, com.hgu.library.model.BookList, java.util.*" %>
-<%--<%--%>
-<%--	BookDao bookDao = new BookDao();--%>
-<%--	List<BookList> list = bookDao.getAllBookLists();--%>
-<%--	request.setAttribute("list", list);--%>
-<%--%>--%>
 <%
 	List<BookList> list= BookDao.getAllBookLists();
 	request.setAttribute("list",list);
@@ -206,10 +201,10 @@
 					</c:forEach>
 					<script>
 						function delete_ok(id) {
-							var a = confirm("정말로 삭제하겠습니까?");
-							if (a)
+							if (confirm("정말로 삭제하겠습니까?")==true){
 								location.href = './deleteok/' + id;
-							alert("삭제되었습니다.");
+								alert("삭제되었습니다.");
+							} else return false;
 						}
 					</script>
 				</div>

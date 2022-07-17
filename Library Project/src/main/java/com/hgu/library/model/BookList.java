@@ -13,4 +13,5 @@ public class BookList {
     private int id;
     private String bookcode, pdf_title, thumnail, book_title, author, translator, publication_date, publisher
             ,pages, isbn, location, memo, copies;
+    private Date reg_date;
 }
