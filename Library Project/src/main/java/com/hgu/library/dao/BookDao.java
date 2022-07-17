@@ -27,10 +27,19 @@ public class BookDao {
     public static int addBook(BookList book) {
         int status=0;
         try(Connection con= getConnection()){
-            String query = "insert into book (book_title, author) values (?, ?)";
+            String query = "insert into book (book_title, author, translator, publisher, publication_date, pages, isbn, location, bookcode, thumnail, pdf_title) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
             PreparedStatement preparedStatement = con.prepareStatement(query);
             preparedStatement.setString(1, book.getBook_title());
             preparedStatement.setString(2, book.getAuthor());
+            preparedStatement.setString(3, book.getTranslator());
+            preparedStatement.setString(4, book.getPublisher());
+            preparedStatement.setString(5, book.getPublication_date());
+            preparedStatement.setString(6, book.getPages());
+            preparedStatement.setString(7, book.getIsbn());
+            preparedStatement.setString(8, book.getLocation());
+            preparedStatement.setString(9, book.getBookcode());
+            preparedStatement.setString(10, book.getLocation());
+            preparedStatement.setString(11, book.getBookcode());
             status = preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -63,10 +72,20 @@ public class BookDao {
     public static int updateBook(BookList book) {
         int status=0;
         try(Connection con = getConnection()){
-            String query = "update book set book_title=?, author=? where id=?";
+            String query = "update book set book_title=?, author=?, translator=?, publisher=?, publication_date=?, pages=?, isbn=?, location=?, bookcode=?, thumnail=?, pdf_title=?  where id=?";
             PreparedStatement preparedStatement = con.prepareStatement(query);
             preparedStatement.setString(1, book.getBook_title());
             preparedStatement.setString(2, book.getAuthor());
+            preparedStatement.setString(3, book.getTranslator());
+            preparedStatement.setString(4, book.getPublisher());
+            preparedStatement.setString(5, book.getPublication_date());
+            preparedStatement.setString(6, book.getPages());
+            preparedStatement.setString(7, book.getIsbn());
+            preparedStatement.setString(8, book.getLocation());
+            preparedStatement.setString(9, book.getBookcode());
+            preparedStatement.setString(10, book.getLocation());
+            preparedStatement.setString(11, book.getBookcode());
+            preparedStatement.setInt(12, book.getId());
             status = preparedStatement.executeUpdate();
         } catch (SQLException e){
             e.printStackTrace();

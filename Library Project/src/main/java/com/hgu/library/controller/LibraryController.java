@@ -37,7 +37,7 @@ public class LibraryController {
 	public String addBookOK(BookList bookList) {
 		int i = BookDao.addBook(bookList);
 		if(i == 0) System.out.println("Error! Create Failed");
-		else System.out.println(bookList.getBook_title() + "add ok!");
+		else System.out.println(bookList.getBook_title() + " add ok!");
 
 		return "redirect:bookList";
 	}
