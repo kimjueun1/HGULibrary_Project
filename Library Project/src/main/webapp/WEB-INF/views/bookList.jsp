@@ -6,7 +6,7 @@
 	language="java"%>
 <%@ page import="com.hgu.library.dao.BookDao, com.hgu.library.model.BookList, java.util.*" %>
 <%
-	List<BookList> list= BookDao.getAllBookLists();
+	ArrayList<BookList> list= BookDao.getAllBookLists();
 	request.setAttribute("list",list);
 %>
 <!doctype html>
@@ -105,6 +105,28 @@
 					<a href="./login"
 						class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0">관리자 모드</a>
 				</div>
+				<%
+				/* 	
+					out.print(session.getAttribute("name")); */
+					session = request.getSession();
+					String name = (String)session.getAttribute("name");
+					
+				%>
+				<%
+				if(name!=null){
+				%>
+				<%=name %>님
+		
+				<div class="flex-row-reverse"><a href="./logout" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0 me-3">&nbsp;&nbsp;로그아웃</a></div>
+				<%
+				} else if(name == null){
+				%>
+			
+				<div class="flex-row-reverse"><a href="./login" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0 me-3">&nbsp;&nbsp;로그인</a></div>
+				<%
+				}
+		
+				%>	
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarHeader"
 					aria-controls="navbarHeader" aria-expanded="false"
@@ -192,8 +214,10 @@
 											src="resources/img/delete.png" alt="deleteImg"
 											class="delete_icon m-2"></a>
 									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-										넣기</small></a>
+									<div>
+										<a  class="text-muted" href="javascript:add_ok('${b.id}')"><small class="text-muted">관심도서
+											넣기</small></a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -204,7 +228,20 @@
 							if (confirm("정말로 삭제하겠습니까?")==true){
 								location.href = './deleteok/' + id;
 								alert("삭제되었습니다.");
+								location.href = './bookList';
 							} else return false;
+						}
+					</script>
+					<script>
+						function add_ok(id) {
+							var c = confirm("관심도서로 추가하시겠습니까?");
+							if (c){
+								location.href = './addBookmarkok/' + id;
+						 		var d = confirm("추가된 관심도서를 확인하시겠습니까?");
+								if(d)	location.href = './bookmark';
+								else 	location.href = './bookList'; 
+								} 
+							else return false; 
 						}
 					</script>
 				</div>

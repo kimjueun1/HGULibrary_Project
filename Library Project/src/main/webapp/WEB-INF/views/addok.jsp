@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.hgu.library.dao.BookDao" %>
@@ -19,5 +18,6 @@ request.setCharacterEncoding("utf-8");
 
 <script>
 	alert('<%=msg%>');
-	location.href='bookList';
+	location.href='./bookList';
 </script>
+

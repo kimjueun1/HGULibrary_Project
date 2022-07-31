@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!doctype html>
 <html lang="kr">
 <head>
@@ -101,7 +101,6 @@
 
 </head>
 <body>
-
 	<header>
 
 		<div class="navbar navbar-light" style="background-color: #e3f2fd;">
@@ -111,7 +110,30 @@
 					style="width: 35px;"> <strong>창조과학연구소 도서관</strong>
 				</a>
 				<div class="me-auto"><a href="./login" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0">관리자 모드</a></div>
-				<div class="flex-row-reverse"><a href="./login" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0 me-3">로그인</a></div>
+				<%
+				/* 	
+					out.print(session.getAttribute("name")); */
+					session = request.getSession();
+					String name = (String)session.getAttribute("name");
+					
+				%>
+				<%
+				if(name!=null){
+				%>
+				<%=name %>님
+		
+				<div class="flex-row-reverse"><a href="./logout" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0 me-3">&nbsp;&nbsp;로그아웃</a></div>
+				<%
+				} else if(name == null){
+				%>
+			
+				<div class="flex-row-reverse"><a href="./login" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0 me-3">&nbsp;&nbsp;로그인</a></div>
+				<%
+				}
+		
+				%>
+			
+			
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarHeader"
 					aria-controls="navbarHeader" aria-expanded="false"

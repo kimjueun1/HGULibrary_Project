@@ -13,5 +13,5 @@
         b.setId(id);
         BookDao.deleteBookOne(id);
     }
-    response.sendRedirect("/bookList");
+    response.sendRedirect("./bookList");
 %>

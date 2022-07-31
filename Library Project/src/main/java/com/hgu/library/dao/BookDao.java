@@ -1,32 +1,39 @@
 package com.hgu.library.dao;
 
-import com.hgu.library.model.BookList;
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
+
+
+
+import com.hgu.library.model.BookList;
+import com.hgu.library.util.DBConnectionUtility;
+
 
 public class BookDao {
-    public static Connection getConnection(){
-        Connection con=null;
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con= DriverManager.getConnection("jdbc:Mysql://walab.handong.edu:3306/csr_library?useSSL=FALSE",  "csr_library", "creationlib123");
-        }catch(Exception e){System.out.println(e);}
-        return con;
-    }
 
-    public static void main(String ars[]) {
-        Connection conn = getConnection();
-        if(conn !=null)
-            System.out.println("DB connected!");
-        else
-            System.out.println("error!");
-    }
+//    public static Connection getConnection(){
+//        Connection con=null;
+//        try{
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            con= DriverManager.getConnection("jdbc:Mysql://walab.handong.edu:3306/csr_library?useSSL=FALSE",  "csr_library", "creationlib123");
+//        }catch(Exception e){System.out.println(e);}
+//        return con;
+//    }
+//
+//    public static void main(String ars[]) {
+//        Connection conn = getConnection();
+//        if(conn !=null)
+//            System.out.println("DB connected!");
+//        else
+//            System.out.println("error!");
+//    }
 
     public static int addBook(BookList book) {
         int status=0;
-        try(Connection con= getConnection()){
+        try(Connection con= DBConnectionUtility.getConnection()){
             String query = "insert into book (book_title, author, translator, publisher, publication_date, pages, isbn, location, bookcode, thumnail, pdf_title) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
             PreparedStatement preparedStatement = con.prepareStatement(query);
             preparedStatement.setString(1, book.getBook_title());
@@ -45,11 +52,12 @@ public class BookDao {
             e.printStackTrace();
         }
         return status;
+//    	return sqlSession.insert("BookDAO.addBook", book);
     }
 
     public static int deleteBookOne(int bookId) {
         int status=0;
-        try(Connection con = getConnection()){
+        try(Connection con = DBConnectionUtility.getConnection()){
             String query = "delete from book where id=?";
             PreparedStatement preparedStatement = con.prepareStatement(query);
             preparedStatement.setInt(1, bookId);
@@ -71,7 +79,7 @@ public class BookDao {
 
     public static int updateBook(BookList book) {
         int status=0;
-        try(Connection con = getConnection()){
+        try(Connection con = DBConnectionUtility.getConnection()){
             String query = "update book set book_title=?, author=?, translator=?, publisher=?, publication_date=?, pages=?, isbn=?, location=?, bookcode=?, thumnail=?, pdf_title=?  where id=?";
             PreparedStatement preparedStatement = con.prepareStatement(query);
             preparedStatement.setString(1, book.getBook_title());
@@ -93,9 +101,9 @@ public class BookDao {
         return status;
     }
 
-    public static List<BookList> getAllBookLists() {
-        List<BookList> bookLists = new ArrayList<BookList>();
-        try(Connection con = getConnection()){
+    public static ArrayList<BookList> getAllBookLists() {
+    	ArrayList<BookList> bookLists = new ArrayList<BookList>();
+        try(Connection con = DBConnectionUtility.getConnection()){
             PreparedStatement ps=con.prepareStatement("select * from book");
             ResultSet resultSet=ps.executeQuery();
 //            Statement statement = con.createStatement();
@@ -129,7 +137,7 @@ public class BookDao {
 
     public static BookList getBookListById(int bookId) {
         BookList bookList = new BookList();
-        try(Connection con = getConnection()){
+        try(Connection con = DBConnectionUtility.getConnection()){
             String query = "select * from book where id=?";
             PreparedStatement preparedStatement = con.prepareStatement(query);
             preparedStatement.setInt(1, bookId);

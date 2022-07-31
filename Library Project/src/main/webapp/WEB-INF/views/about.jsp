@@ -1,13 +1,20 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
+<%
+	response.addHeader("Access-Control-Allow-Origin", "*");
+	response.setHeader("Access-Control-Allow-Headers", "origin, x-requested-with, content-type, accept");
+%>
 
 <!doctype html>
 <html lang="kr">
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-	
 </script>
+
 <head>
+	<script src="/docs/5.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
@@ -113,6 +120,28 @@
 					<a href="./login"
 						class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0">관리자 모드</a>
 				</div>
+				<%
+				/* 	
+					out.print(session.getAttribute("name")); */
+					session = request.getSession();
+					String name = (String)session.getAttribute("name");
+					
+				%>
+				<%
+				if(name!=null){
+				%>
+				<%=name %>님
+		
+				<div class="flex-row-reverse"><a href="./logout" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0 me-3">&nbsp;&nbsp;로그아웃</a></div>
+				<%
+				} else if(name == null){
+				%>
+			
+				<div class="flex-row-reverse"><a href="./login" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0 me-3">&nbsp;&nbsp;로그인</a></div>
+				<%
+				}
+		
+				%>	
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarHeader"
 					aria-controls="navbarHeader" aria-expanded="false"
@@ -204,6 +233,7 @@
 		</div>
 	</main>
 
+
 	<footer class="text-muted py-5 bg-light">
 		<div class="container">
 			<p class="float-end mb-1">
@@ -217,9 +247,7 @@
 	</footer>
 
 
-	<script src="/docs/5.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous"></script>
+
 
 
 </body>

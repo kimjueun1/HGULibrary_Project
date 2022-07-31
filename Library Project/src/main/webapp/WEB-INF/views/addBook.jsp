@@ -39,7 +39,7 @@
         <button type="button" class="btn btn-primary m-1" onclick="history.back()" >목록으로</button>
     </div>
     <div class="row py-lg-5 card shadow-sm ">
-    <form:form  method="post" action="../addok" class="col-lg-6 col-md-8 mx-auto">
+    <form:form  method="post" action="./addok" class="col-lg-6 col-md-8 mx-auto">
         <table id="edit" style="margin-left: auto; margin-right: auto;" class="card-body">
             <tr><td >책 제목</td><td><input type="text" name="book_title" class="input" /></td></tr>
             <tr><td >저자</td><td><input type="text" name="author" class="input"/></td></tr>

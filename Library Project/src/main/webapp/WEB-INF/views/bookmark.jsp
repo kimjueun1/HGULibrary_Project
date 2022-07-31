@@ -1,6 +1,29 @@
+<%@ page
+	import="com.hgu.library.dao.BookmarkDao, com.hgu.library.model.Bookmark, java.util.*"%>
+<%@ page import="com.hgu.library.model.Bookmark"%>
+<%@ page import="java.util.List"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
+<%
+	String s_userId = String.valueOf(session.getAttribute("userId"));
 
+%>
+<%	
+try{
+	String name = (String)session.getAttribute("name");
+	System.out.println(name);
+	int userId = Integer.parseInt(s_userId);
+	if(userId==0) 
+		response.sendRedirect("mainPage.jsp");
+
+	System.out.println(userId);
+	ArrayList<Bookmark> list = BookmarkDao.getAllBookmarkLists(userId);
+	request.setAttribute("list", list);
+} catch (Exception e) {
+/*     out.println("An exception occurred: " + e.getMessage()); */
+}
+%>
 <!doctype html>
 <html lang="kr">
 <head>
@@ -94,9 +117,30 @@
 					style="width: 35px;"> <strong>창조과학연구소 도서관</strong>
 				</a>
 				<div class="me-auto">
-					<a href="./login"
-						class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0">관리자 모드</a>
-				</div>
+					<a href="./login" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0">관리자 모드</a></div>
+				<%
+				/* 	
+					out.print(session.getAttribute("name")); */
+					session = request.getSession();
+					String name = (String)session.getAttribute("name");
+					
+				%>
+				<%
+				if(name!=null){
+				%>
+				<%=name %>님
+		
+				<div class="flex-row-reverse"><a href="./logout" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0 me-3">&nbsp;&nbsp;로그아웃</a></div>
+				<%
+				} else if(name == null){
+				%>
+			
+				<div class="flex-row-reverse"><a href="./login" class="fw-lighter text-black text-decoration-none bg-transparent rounded border-0 me-3">&nbsp;&nbsp;로그인</a></div>
+				<%
+				}
+		
+				%>	
+			
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarHeader"
 					aria-controls="navbarHeader" aria-expanded="false"
@@ -120,10 +164,12 @@
 							<div class="collapse navbar-collapse" id="navbarNav">
 								<ul class="navbar-nav">
 									<li class="nav-item"><a class="nav-link" href="./main">Home</a></li>
-									<li class="nav-item"><a class="nav-link " href="./bookList">도서목록</a></li>
+									<li class="nav-item"><a class="nav-link "
+										href="./bookList">도서목록</a></li>
 									<li class="nav-item"><a class="nav-link" href="./about">About</a>
 									</li>
-									<li class="nav-item"><a class="nav-link active" aria-current="page" href="./bookmark">내 관심도서</a></li>
+									<li class="nav-item"><a class="nav-link active"
+										aria-current="page" href="./bookmark">내 관심도서</a></li>
 								</ul>
 							</div>
 						</div>
@@ -138,242 +184,64 @@
 	<main>
 
 		<section class="py-5 text-center container">
-			<div class="row py-lg-5">
-			</div>
+			<div class="row py-lg-5"></div>
 			<div class="btn-group float-end mb-5">
-				<button type="button" class="btn btn-primary">도서추가</button>
+				<button type="button" class="btn btn-primary"
+					onclick="location.href='./bookList'">관심도서 추가하기</button>
 			</div>
 		</section>
 
 		<div class="album py-5 bg-light">
 			<div class="container">
-
 				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A001.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">Answers to the 4 big questions!</p>
-								<p class="book-info">Don Batten, Kenneth Ham, Jonathan
-									Sarfati, Carl Wielnad, Paul S. Taylor</p>
-								<p class="book-info">Answers In Genesis(2000), 64pages</p>
-								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/0-949906-25-5"
-									class="book-info text-muted"><p>0-949906-25-5</p></a>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A002_c.2.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">An Ice Age Caused by the Genesis Flood</p>
-								<p class="book-info">Michael J. Oard, Micheal Oard, Marshall
-									Hall</p>
-								<p class="book-info">Inst For Creation Research(1990),
-									243pages</p>
-								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/0-932766-20-X"
-									class="book-info text-muted"><p>0-932766-20-X</p></a>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A003.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
+					<c:forEach items="${list}" var="b">
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="col">
+									<div class="card shadow-sm">
+										<img src="resources/thumnail/<c:out value='${b.thumnail}' />"
+											alt="bookImg" class="bookImg mx-auto d-block m-1">
+										<div class="card-body">
+											<p class="card-text">
+												<c:out value="${b.book_title}" />
+											</p>
+											<p class="book-info">
+												<c:out value="${b.author}" />
+											</p>
+											<p class="book-info">
+												<c:out value="${b.publisher}" />
+												,
+												<c:out value="${b.pages}" />
+												pages
+											</p>
+											<p class="book-info">
+												<c:out value="${b.location}" />
+											</p>
+											<a
+												href="https://isbnsearch.org/isbn/<c:out value="${b.isbn}" />"
+												class="book-info text-muted"><p>
+													<c:out value="${b.isbn}" />
+												</p></a>
+											<div
+												class="d-flex justify-content-between align-items-center">
+												<div class="btn-group">
+													<%-- 	<a href="./edit/${b.getId()}"><img src="resources/img/editIcon.png"
+														 alt="editImg" class="edit_icon m-0"></a>  --%>
 
-							<div class="card-body">
-								<p class="card-text">Answers</p>
-								<p class="book-info">AnswersMagazine(2011), 185pages</p>
-								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/0-949906-25-5"
-									class="book-info text-muted"><p></p></a>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
+												</div>
+												<a href="javascript:delete_ok('${b.id}')"> <h>관심도서
+													삭제</h> <!-- 	<img src="resources/img/delete.png" alt="deleteImg"
+											class="delete_icon m-2"> -->
+												</a>
+												<!-- 		<a href="#" class="text-muted"><small class="text-muted">관심도서
+													넣기</small></a> -->
+											</div>
+										</div>
 									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A004.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">A Guide to the National Science Museum</p>
-								<p class="book-info">National Science Museum(1990), 61pages</p>
-								<p class="book-info">A-1</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A005.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">A Picture Tour of the National Museum
-									of Natural History</p>
-								<p class="book-info">Robert D. Sullivan, Sue Voss, Chip
-									Clark</p>
-								<p class="book-info">National Science Museum(1991), 32pages</p>
-								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/1-56098-050-8"
-									class="book-info text-muted"><p>1-56098-050-8</p></a>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A006.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">Archaeology and Bible history</p>
-								<p class="book-info">Joseph P. Free</p>
-								<p class="book-info">scripture press publications inc(1969),
-									398pages</p>
-								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/0-88207-801-1"
-									class="book-info text-muted"><p>0-88207-801-1</p></a>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A007.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">A basis for a new biology</p>
-								<p class="book-info">A. E. Wilder-Smith</p>
-								<p class="book-info">telos(1976), 290pages</p>
-								<p class="book-info">A-1</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A008.jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">After Man</p>
-								<p class="book-info">Dougal Dixon</p>
-								<p class="book-info">St. Martin's Press(1981), 124pages</p>
-								<p class="book-info">A-1</p>
-								<a href="https://isbnsearch.org/isbn/0-312-01163-6"
-									class="book-info text-muted"><p>0-312-01163-6</p></a>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<img src="resources/img/A008(1).jpg" alt="bookImg"
-								class="bookImg mx-auto d-block m-1">
-							<div class="card-body">
-								<p class="card-text">And God Created Volume 4</p>
-								<p class="book-info">Kelly L. Segraves</p>
-								<p class="book-info">Creation-Science Research Center(1973),
-									91pages</p>
-								<p class="book-info">A-1</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a href="#"><img src="resources/img/editIcon.png"
-											alt="editImg" class="edit_icon m-0"></a> <a href="#"
-											href="javascript:delete_ok()"><img
-											src="resources/img/delete.png" alt="deleteImg"
-											class="delete_icon m-2"></a>
-									</div>
-									<a href="#" class="text-muted"><small class="text-muted">관심도서
-											넣기</small></a>
-								</div>
-							</div>
-						</div>
-					</div>
+					</c:forEach>
 				</div>
 			</div>
 		</div>
@@ -397,11 +265,14 @@
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
 	<script>
-	function delete_ok() {
-		var a = confirm("정말로 삭제하겠습니까?");
-		<!-- if (a)-->
-		<!--	location.href = '/webcamp/teamA/delete_ok/' + id; -->
-	}
+		function delete_ok(id) {
+			var a = confirm("관심도서를 삭제하겠습니까?");
+			if (a) {
+				location.href = './deletBookmarkeOk/' + id;
+				alert("관심도서를 삭제하였습니다.");
+				location.href = './bookmark';
+			}
+		}
 	</script>
 
 </body>

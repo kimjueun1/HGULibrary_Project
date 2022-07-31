@@ -1,19 +1,35 @@
-//package com.hgu.library.util;
-//
-//import javax.naming.Context;
-//import javax.naming.InitialContext;
-//import javax.naming.NamingException;
-//import javax.sql.DataSource;
-//import java.sql.Connection;
-//import java.sql.DriverManager;
-//import java.sql.SQLException;
-//
-//public class DBConnectionUtility {
+package com.hgu.library.util;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DBConnectionUtility {
+  public static Connection getConnection(){
+  Connection con=null;
+  try{
+      Class.forName("com.mysql.cj.jdbc.Driver");
+      con= DriverManager.getConnection("jdbc:Mysql://walab.handong.edu:3306/csr_library?useSSL=FALSE",  "csr_library", "creationlib123");
+  }catch(Exception e){System.out.println(e);}
+  return con;
+}
+
+public static void main(String ars[]) {
+  Connection conn = getConnection();
+  if(conn !=null)
+      System.out.println("DB connected!");
+  else
+      System.out.println("error!");
+}
 //	public static Connection getConnection(){
 //		Connection con=null;
 //		try{
 //			Class.forName("com.mysql.jdbc.Driver");
-//			con= DriverManager.getConnection("jdbc:Mysql://walab.handong.edu:3306/csr_library?useSSL=false,  csr_library, creationlib123");
+//			con= DriverManager.getConnection("jdbc:Mysql://walab.handong.edu:3306/csr_library?useSSL=false",  "csr_library", "creationlib123");
 //		} catch (ClassNotFoundException | SQLException e) {
 //			e.printStackTrace();
 //		}
@@ -49,6 +65,6 @@
 //				con.close();
 //		} catch (SQLException e) {}
 //	}
-//
-//}
-//
+
+}
+
